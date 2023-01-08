@@ -4,11 +4,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
 entry: {
     index: './src/index.js',
-    print: './src/print.js',
+    folder: './src/folder.js',
+    task: './src/task.js',
   },
     plugins: [
     new HtmlWebpackPlugin({
-      title: 'Output Management',
+      title: 'Todo list',
     }),
   ],
   devtool: 'inline-source-map',
