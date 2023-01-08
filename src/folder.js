@@ -1,1 +1,5 @@
-console.log("asd")
+const folder = function(title, create) {
+
+
+  return {title, create}
+}

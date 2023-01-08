@@ -1,6 +1,7 @@
 import './style.css';
-import printMe from './task.js';
+import taskdom from './taskDOM';
 import printMe2 from './folder';
+import taskDOM from './taskDOM';
 
 function layout() {
   const element = document.createElement('div');
@@ -25,12 +26,15 @@ function sidebar() {
   const sidebar = document.createElement("div");
   sidebar.classList.add("sidebar");
 
+
   return sidebar;
 }
 
 function taskcontainer() {
   const taskcontainer = document.createElement("div");
   taskcontainer.classList.add("taskcontainer");
+
+    taskcontainer.appendChild(taskdom());
 
   return taskcontainer;
 }
