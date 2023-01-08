@@ -1,7 +1,6 @@
 import './style.css';
 import taskdom from './taskDOM';
-import printMe2 from './folder';
-import taskDOM from './taskDOM';
+import folderdom from './folderDOM';
 
 function layout() {
   const element = document.createElement('div');
@@ -26,6 +25,7 @@ function sidebar() {
   const sidebar = document.createElement("div");
   sidebar.classList.add("sidebar");
 
+  sidebar.appendChild(folderdom());
 
   return sidebar;
 }
