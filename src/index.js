@@ -1,6 +1,5 @@
 import './style.css';
 import taskdom from './taskDOM';
-import folder from './folder';
 import folderform from './folderDOM';
 
 function layout() {

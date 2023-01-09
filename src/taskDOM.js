@@ -1,8 +1,9 @@
+import task from "./task.js";
 export default function taskform() {
     const form = document.createElement('form');
     form.classList.add("form");
 
-    form.appendChild(checklist());
+//    form.appendChild(checklist());
     form.appendChild(description());
     form.appendChild(dueDate());
     form.appendChild(priority());
@@ -88,7 +89,45 @@ function addTodo() {
     addTodoInput.setAttribute("name", "addTodo");
     addTodoInput.setAttribute("id", "addTodo");
 
-    addTodoLabel.appendChild(addTodoInput);
+
+    //button functionality
+    addTodoInput.addEventListener("click", createTodo);
+    const mytodo = [];
+    function createTodo(event){
+        const description = document.getElementById("description").value;
+        const dueDate = document.getElementById("dueDate").value;
+        const priority = document.getElementById("priority").value;
+        mytodo.push(task(description, dueDate, priority));
+        console.log(mytodo);
+        // creating dom for button
+        const todoDiv = document.createElement("div");
+        todoDiv.classList.add("todo" + mytodo.length);
+        todoDiv.appendChild(checklist());
+        //adding description
+        const todop1 = document.createElement("p");
+        todop1.innerHTML = description;
+        todoDiv.appendChild(todop1);
+        //adding due date
+        const todop2 = document.createElement("p");
+        todop2.innerHTML = dueDate;
+        todoDiv.appendChild(todop2);
+        //adding priority
+        const todop3 = document.createElement("p");
+        todop3.innerHTML = priority;
+        todoDiv.appendChild(todop3);
+
+
+        const deleteButton = document.createElement("button");
+        deleteButton.innerHTML = "Delete";
+        deleteButton.addEventListener("click", function(){return taskcontainerpr.removeChild(todoDiv)});
+        todoDiv.appendChild(deleteButton);
+        console.log("asd");
+
+     const taskcontainerpr = document.getElementsByClassName("taskcontainer")[0];
+      taskcontainerpr.appendChild(todoDiv);
+    }
+
+addTodoLabel.appendChild(addTodoInput);
 
     return addTodoLabel;
 }

@@ -6,6 +6,6 @@ const folder = function(title) {
   return {title}
 }
 
-console.log(folder("title"))
+//console.log(folder("title"))
 
 export default folder;
