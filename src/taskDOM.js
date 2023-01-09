@@ -120,8 +120,8 @@ function addTodo() {
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";
         deleteButton.addEventListener("click", function(){return taskcontainerpr.removeChild(todoDiv)});
+        deleteButton.addEventListener("click", function(){return mytodo.splice(mytodo.length - 1, 1)});
         todoDiv.appendChild(deleteButton);
-        console.log("asd");
 
      const taskcontainerpr = document.getElementsByClassName("taskcontainer")[0];
       taskcontainerpr.appendChild(todoDiv);

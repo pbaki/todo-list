@@ -51,6 +51,7 @@ function create () {
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";
         deleteButton.addEventListener("click", function(){return sidebarpr.removeChild(projectDiv)});
+        deleteButton.addEventListener("click", function(){return myProjects.splice(myProjects.length - 1, 1)});
         projectDiv.appendChild(deleteButton);
 
      const sidebarpr = document.getElementsByClassName("sidebar")[0];
