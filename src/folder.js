@@ -1,5 +1,11 @@
-const folder = function(title, create) {
+import folderform from "./folderDOM";
+
+const folder = function(title) {
 
 
-  return {title, create}
+  return {title}
 }
+
+console.log(folder("title"))
+
+export default folder;
