@@ -40,23 +40,37 @@ function create () {
     const myProjects = [];
     function createProject(event){
         const title = document.getElementById("title").value;
-        myProjects.push(folder(title));
-        console.log(myProjects)
+        workingOnObject();
+
         // creating dom for button
         const projectDiv = document.createElement("div");
         projectDiv.classList.add("project" + myProjects.length);
         const projectH = document.createElement("h1");
         projectH.innerHTML = title;
         projectDiv.appendChild(projectH);
+        
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";
         deleteButton.addEventListener("click", function(){return sidebarpr.removeChild(projectDiv)});
         deleteButton.addEventListener("click", function(){return myProjects.splice(myProjects.length - 1, 1)});
         projectDiv.appendChild(deleteButton);
 
-     const sidebarpr = document.getElementsByClassName("sidebar")[0];
+
+        const sidebarpr = document.getElementsByClassName("sidebar")[0];
+     
       sidebarpr.appendChild(projectDiv);
     }
+
+    function workingOnObject () {
+        const title = document.getElementById("title").value;
+        const id = myProjects.length;
+        myProjects.push(folder(id, title));
+        console.log(myProjects);
+        console.log(id);
+        console.log(folder.object);
+        return myProjects;
+    }
+
 
     createLabel.appendChild(createInput);
 
