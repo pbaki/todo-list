@@ -1,15 +1,12 @@
-
+import { domElement } from "./folderDOM";
 
 const folder = function(id, title) {
 
-  const object = () => {
-    const domel = document.getElementsByClassName("project" + myProjects.length);
-    console.log(domel);
-    return domel;
-  }
+    const connector = domElement();
+    console.log(connector);
 
 
-  return {id, title, object}
+  return {id, title}
 }
 
 //console.log(folder("title"))

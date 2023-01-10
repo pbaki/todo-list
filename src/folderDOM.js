@@ -24,7 +24,7 @@ function title () {
     return titleLabel;
 }
 
-
+const myProjects = [];
 function create () {
     const createLabel = document.createElement('label');
     createLabel.setAttribute("for", "create");
@@ -37,7 +37,7 @@ function create () {
 
 // button functionality
     createInput.addEventListener("click", createProject);
-    const myProjects = [];
+    
     function createProject(event){
         const title = document.getElementById("title").value;
         workingOnObject();
@@ -48,6 +48,11 @@ function create () {
         const projectH = document.createElement("h1");
         projectH.innerHTML = title;
         projectDiv.appendChild(projectH);
+
+        // projectDiv.addEventListener("click", switchProject);
+        // function createProject(event){
+
+        //     }
         
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";
@@ -67,12 +72,23 @@ function create () {
         myProjects.push(folder(id, title));
         console.log(myProjects);
         console.log(id);
-        console.log(folder.object);
         return myProjects;
     }
-
+    
+    
 
     createLabel.appendChild(createInput);
 
     return createLabel;
 }
+
+
+function domElement () {
+
+
+    const domel = document.getElementsByClassName("project" + myProjects.length);
+    
+    return domel
+}
+
+export { domElement, myProjects }

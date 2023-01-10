@@ -78,7 +78,7 @@ function checklist() {
 
     return checklistLabel;
 }
-
+    const mytodo = [];
 function addTodo() {
     const addTodoLabel = document.createElement('label');
     addTodoLabel.setAttribute("for", "addTodo");
@@ -92,7 +92,7 @@ function addTodo() {
 
     //button functionality
     addTodoInput.addEventListener("click", createTodo);
-    const mytodo = [];
+
     function createTodo(event){
         const description = document.getElementById("description").value;
         const dueDate = document.getElementById("dueDate").value;
@@ -131,3 +131,13 @@ addTodoLabel.appendChild(addTodoInput);
 
     return addTodoLabel;
 }
+
+function tododomElement () {
+
+
+    const domel = document.getElementsByClassName("todo" + mytodo.length);
+    
+    return domel
+}
+
+export {tododomElement, mytodo}
