@@ -1,4 +1,5 @@
 import task from "./task.js";
+import { newlist } from "./folder.js";
 export default function taskform() {
     const form = document.createElement('form');
     form.classList.add("form");
@@ -131,12 +132,12 @@ function addTodo() {
         const description = document.getElementById("description").value;
         const dueDate = document.getElementById("dueDate").value;
         const priority = document.getElementById("priority").value;
-        const id = mytodo.length;
-        mytodo.push(task(id, description, dueDate, priority));
-        console.log(mytodo);
+        const id = newlist.length;
+        newlist.push(task(id, description, dueDate, priority));
+        console.log(newlist);
         console.log(id);
         
-        return mytodo;
+        return newlist;
 }
 
 addTodoLabel.appendChild(addTodoInput);
@@ -147,7 +148,7 @@ addTodoLabel.appendChild(addTodoInput);
 function domElement () {
 
 
-    const domel = document.getElementsByClassName("todo" + mytodo.length);
+    const domel = document.getElementsByClassName("todo" + newlist.length);
     
     return domel;
 }

@@ -28,3 +28,10 @@ body {
     grid-row: 2;
     border: 1px solid black;
 }
+
+div[class*='todo'] {
+    border: 1px solid black;
+}
+div[class*='project'] {
+    border: 1px solid black;
+}

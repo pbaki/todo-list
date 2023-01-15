@@ -1,4 +1,4 @@
-import { tododomElement, domElement } from "./taskDOM";
+import { domElement } from "./taskDOM";
 
 const task = function(id, description, dueDate, priority, connector) {
 
