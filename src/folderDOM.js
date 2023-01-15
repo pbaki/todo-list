@@ -1,6 +1,6 @@
 import folder from "./folder";
 import { mytodo } from "./taskDOM";
-import { newlist } from "./folder";
+import { domElement2 } from "./taskDOM";
 export default function folderform () {
     const form = document.createElement('form');
     form.classList.add("form");
@@ -26,7 +26,8 @@ function title () {
     return titleLabel;
 }
 
-const myProjects = ["asd"];
+const myProjects = [];
+let newlist = [];
 function create () {
     const createLabel = document.createElement('label');
     createLabel.setAttribute("for", "create");
@@ -39,12 +40,10 @@ function create () {
 
 // Create New button functionality
     createInput.addEventListener("click", createProject);
-    
     function createProject(event){
-        
-        
+        newlist = [];
         const title = document.getElementById("title").value;
-        workingOnObject();
+        
 
         // creating dom for button
         const projectDiv = document.createElement("div");
@@ -56,22 +55,22 @@ function create () {
         projectDiv.addEventListener("click", switchProject)
         function switchProject(){
             //onclick switching between todo 
-            console.log("asd");
-            // const taskcontainerpr = document.getElementsByClassName("taskcontainer")[0];
-            // while (taskcontainerpr.children[1]) {
-            // taskcontainerpr.removeChild(taskcontainerpr.lastChild);
-            //     };
+        const taskcontainerpr = document.getElementsByClassName("taskcontainer")[0];
 
-            console.log("Hello");
-            if (myProjects[myProjects.length].newlist !== []){
-                for(item of newlist){
-                    taskcontainerpr.appendChild(item);
-                };
-            };
+            
+            for (let item of mytodo){
+                newlist.push(item);
+            }
+            mytodo.splice(0, mytodo.length);
+            for (let item of newlist){
+                console.log(item)
+                
+            }
+            
             
 
             };
-
+        workingOnObject();
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";
         deleteButton.addEventListener("click", function(){return sidebarpr.removeChild(projectDiv)});
@@ -87,8 +86,8 @@ function create () {
     function workingOnObject () {
         const title = document.getElementById("title").value;
         const id = myProjects.length;
-        myProjects.push(folder(id, title));
-//        console.log(myProjects);
+        myProjects.push(new folder(id, title, domElement, newlist));
+        console.log(myProjects);
 //        console.log(id);
         
         return myProjects;

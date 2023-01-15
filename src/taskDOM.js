@@ -132,12 +132,13 @@ function addTodo() {
         const description = document.getElementById("description").value;
         const dueDate = document.getElementById("dueDate").value;
         const priority = document.getElementById("priority").value;
-        const id = newlist.length;
-        newlist.push(task(id, description, dueDate, priority));
-        console.log(newlist);
+        const id = mytodo.length;
+
+        mytodo.push(new task(id, description, dueDate, priority, domElement2));
+        console.log(mytodo);
         console.log(id);
         
-        return newlist;
+        return mytodo;
 }
 
 addTodoLabel.appendChild(addTodoInput);
@@ -145,12 +146,11 @@ addTodoLabel.appendChild(addTodoInput);
     return addTodoLabel;
 }
 
-function domElement () {
+function domElement2 () {
 
-
-    const domel = document.getElementsByClassName("todo" + newlist.length);
+    const domel = document.getElementsByClassName("todo" + mytodo.length);
     
     return domel;
 }
 
-export {domElement, mytodo}
+export {domElement2, mytodo}
