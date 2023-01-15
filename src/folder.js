@@ -1,12 +1,12 @@
 import { domElement } from "./folderDOM";
 
-const folder = function(id, title) {
+const folder = function(id, title, connector) {
 
-    const connector = domElement();
+    connector =  domElement();
     console.log(connector);
 
 
-  return {id, title}
+  return {id, title, connector}
 }
 
 //console.log(folder("title"))

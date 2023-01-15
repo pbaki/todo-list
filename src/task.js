@@ -1,10 +1,10 @@
-import { tododomElement, mytodo } from "./taskDOM";
+import { tododomElement, domElement } from "./taskDOM";
 
-const task = function(description, dueDate, priority) {
+const task = function(id, description, dueDate, priority, connector) {
 
-    const connector = tododomElement();
+    connector = domElement();
     console.log(connector);
 
-  return {description, dueDate, priority, connector}
+  return {id, description, dueDate, priority, connector}
 }
 export default task;

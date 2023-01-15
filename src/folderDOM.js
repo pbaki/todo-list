@@ -41,6 +41,7 @@ function create () {
     function createProject(event){
         const title = document.getElementById("title").value;
         workingOnObject();
+        
 
         // creating dom for button
         const projectDiv = document.createElement("div");
@@ -49,10 +50,11 @@ function create () {
         projectH.innerHTML = title;
         projectDiv.appendChild(projectH);
 
-        // projectDiv.addEventListener("click", switchProject);
-        // function createProject(event){
-
-        //     }
+        projectDiv.addEventListener("click", switchProject);
+        function switchProject(event){
+            //onclick switching between todo lists
+            
+            }
         
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";
@@ -72,6 +74,7 @@ function create () {
         myProjects.push(folder(id, title));
         console.log(myProjects);
         console.log(id);
+        
         return myProjects;
     }
     
@@ -88,7 +91,7 @@ function domElement () {
 
     const domel = document.getElementsByClassName("project" + myProjects.length);
     
-    return domel
+    return domel;
 }
 
 export { domElement, myProjects }

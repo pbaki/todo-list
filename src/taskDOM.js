@@ -97,8 +97,8 @@ function addTodo() {
         const description = document.getElementById("description").value;
         const dueDate = document.getElementById("dueDate").value;
         const priority = document.getElementById("priority").value;
-        mytodo.push(task(description, dueDate, priority));
-        console.log(mytodo);
+        tododomElement();
+
         // creating dom for button
         const todoDiv = document.createElement("div");
         todoDiv.classList.add("todo" + mytodo.length);
@@ -116,7 +116,7 @@ function addTodo() {
         todop3.innerHTML = priority;
         todoDiv.appendChild(todop3);
 
-
+        
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";
         deleteButton.addEventListener("click", function(){return taskcontainerpr.removeChild(todoDiv)});
@@ -127,17 +127,29 @@ function addTodo() {
       taskcontainerpr.appendChild(todoDiv);
     }
 
+    function tododomElement () {
+        const description = document.getElementById("description").value;
+        const dueDate = document.getElementById("dueDate").value;
+        const priority = document.getElementById("priority").value;
+        const id = mytodo.length;
+        mytodo.push(task(id, description, dueDate, priority));
+        console.log(mytodo);
+        console.log(id);
+        
+        return mytodo;
+}
+
 addTodoLabel.appendChild(addTodoInput);
 
     return addTodoLabel;
 }
 
-function tododomElement () {
+function domElement () {
 
 
     const domel = document.getElementsByClassName("todo" + mytodo.length);
     
-    return domel
+    return domel;
 }
 
-export {tododomElement, mytodo}
+export {domElement, mytodo}
