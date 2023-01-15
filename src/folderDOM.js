@@ -26,8 +26,7 @@ function title () {
     return titleLabel;
 }
 
-const myProjects = [];
-let newlist = [];
+let myProjects = [];
 function create () {
     const createLabel = document.createElement('label');
     createLabel.setAttribute("for", "create");
@@ -41,10 +40,8 @@ function create () {
 // Create New button functionality
     createInput.addEventListener("click", createProject);
     function createProject(event){
-        newlist = [];
         const title = document.getElementById("title").value;
         
-
         // creating dom for button
         const projectDiv = document.createElement("div");
         projectDiv.classList.add("project" + myProjects.length);
@@ -52,25 +49,27 @@ function create () {
         projectH.innerHTML = title;
         projectDiv.appendChild(projectH);
 
-        projectDiv.addEventListener("click", switchProject)
-        function switchProject(){
-            //onclick switching between todo 
-        const taskcontainerpr = document.getElementsByClassName("taskcontainer")[0];
-
-            
-            for (let item of mytodo){
-                newlist.push(item);
-            }
-            mytodo.splice(0, mytodo.length);
-            for (let item of newlist){
-                console.log(item)
-                
-            }
-            
-            
-
-            };
         workingOnObject();
+
+
+        projectDiv.addEventListener("click", switchProject)
+        function switchProject () {
+            const taskcontainerpr = document.getElementsByClassName("taskcontainer")[0];
+            while (taskcontainerpr.children[1]){
+            taskcontainerpr.removeChild(taskcontainerpr.lastChild);
+        };
+            for (let item of myProjects){
+                const asd = document.querySelectorAll("[class*=project]")
+                asd[item.id].addEventListener("click", () => {
+                    for (let element of item.arr){
+                        taskcontainerpr.appendChild(element)
+                    }
+                });
+                console.log(item)
+            }
+
+
+        }
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";
         deleteButton.addEventListener("click", function(){return sidebarpr.removeChild(projectDiv)});
@@ -83,10 +82,24 @@ function create () {
       sidebarpr.appendChild(projectDiv);
     }
 
+   
+
     function workingOnObject () {
         const title = document.getElementById("title").value;
         const id = myProjects.length;
-        myProjects.push(new folder(id, title, domElement, newlist));
+        const newlist = [];
+        const todoElements = document.querySelectorAll("[class*=todo]")
+        for (let item of todoElements){
+            newlist.push(item)
+        };
+        const taskcontainerpr = document.getElementsByClassName("taskcontainer")[0];
+        while (taskcontainerpr.children[1]){
+            taskcontainerpr.removeChild(taskcontainerpr.lastChild);
+        };
+        const domel = document.getElementsByClassName("project" + myProjects.length);
+
+
+        myProjects.push(new folder(id, title, newlist, domel));
         console.log(myProjects);
 //        console.log(id);
         
@@ -98,14 +111,9 @@ function create () {
     createLabel.appendChild(createInput);
 
     return createLabel;
-}
+};
 
 
-function domElement () {
-    const domel = document.getElementsByClassName("project" + myProjects.length);
-    
-    return domel;
-}
 
 
-export { domElement, myProjects }
+export { myProjects }
