@@ -35,3 +35,6 @@ div[class*='todo'] {
 div[class*='project'] {
     border: 1px solid black;
 }
+div[class*='project']:active {
+    border: 2px solid yellow;
+}

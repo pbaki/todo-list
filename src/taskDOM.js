@@ -1,8 +1,8 @@
 import task from "./task.js";
-import { newlist } from "./folder.js";
+import { myProjects } from "./folderDOM.js";
 export default function taskform() {
     const form = document.createElement('form');
-    form.classList.add("form");
+    form.classList.add("form2");
 
 //    form.appendChild(checklist());
     form.appendChild(description());
@@ -123,8 +123,9 @@ function addTodo() {
         deleteButton.addEventListener("click", function(){return taskcontainerpr.removeChild(todoDiv)});
         deleteButton.addEventListener("click", function(){return mytodo.splice(mytodo.length - 1, 1)});
         todoDiv.appendChild(deleteButton);
-
+        
      const taskcontainerpr = document.getElementsByClassName("taskcontainer")[0];
+
       taskcontainerpr.appendChild(todoDiv);
     }
 
@@ -153,4 +154,4 @@ function domElement2 () {
     return domel;
 }
 
-export {domElement2, mytodo}
+export {domElement2, mytodo, checklist}
