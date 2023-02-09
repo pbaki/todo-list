@@ -6,8 +6,10 @@ entry: {
     index: './src/index.js',
     folder: './src/folder.js',
     task: './src/task.js',
-    taskDOM: './src/taskDOM',
-    folderDOM: './src/folderDOM',
+    taskDOM: './src/taskDOM.js',
+    folderDOM: './src/folderDOM.js',
+    sidebarButton: './src/sidebarButton.js',
+    taskButton: './src/taskButton.js'
   },
     plugins: [
     new HtmlWebpackPlugin({
