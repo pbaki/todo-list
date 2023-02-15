@@ -22,19 +22,89 @@ body {
     grid-column: 1 ;
     grid-row: 2;
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: auto;
 }
 .taskcontainer {
     grid-column: 2;
     grid-row: 2;
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: auto;
 }
 
 div[class*='todo'] {
     border: 1px solid black;
+    margin-left: 20px;
+    margin-right: 25px;
+    display: flex;
+    justify-content: space-between;
 }
 div[class*='project'] {
     border: 1px solid black;
+    margin-left: 5px;
+    margin-right: 10px;
 }
 div[class*='project']:active {
     border: 2px solid yellow;
 }
+
+.folderForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    gap: 5px;
+
+}
+
+#title {
+    margin: 5px;
+}
+#description {
+    margin: 5px;
+    width: 400px;
+}
+#dueDate {
+    margin: 5px;
+}
+#priority {
+    margin: 5px;
+}
+#addTodo {
+    margin: 5px;
+}
+.descContainer {
+    border: 1px solid black;
+    border-top: none;
+}
+
+.restContainer {
+    border: 1px solid black;
+    border-top: none;
+}
+.taskForm {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin: 0px 10px;
+}
+
+.left {
+    margin: 5px 10px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.right {
+    margin: 5px 10px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+

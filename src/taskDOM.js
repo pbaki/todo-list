@@ -1,13 +1,22 @@
 import { taskButtonFunctionality } from "./taskButton.js";
 export default function taskform() {
     const form = document.createElement('form');
-    form.classList.add("form2");
+    form.classList.add("taskForm");
+
+    const descContainer = document.createElement('div');
+    descContainer.classList.add('descContainer');
+
+    const restContainer = document.createElement('div');
+    restContainer.classList.add('restContainer');
 
 //    form.appendChild(checklist());
-    form.appendChild(description());
-    form.appendChild(dueDate());
-    form.appendChild(priority());
-    form.appendChild(addTodo());
+    descContainer.appendChild(description());
+    restContainer.appendChild(dueDate());
+    restContainer.appendChild(priority());
+    restContainer.appendChild(addTodo());
+
+    form.appendChild(descContainer);
+    form.appendChild(restContainer);
 
     return form; 
 }

@@ -8,28 +8,43 @@ let taskButtonFunctionality = function(event) {
         tododomElement();
 
         // creating dom element button is creating
+        const leftContainer = document.createElement('div');
+        leftContainer.classList.add('left');
+        const rightContainer = document.createElement('div');
+        rightContainer.classList.add('right');
+
         const todoDiv = document.createElement("div");
         todoDiv.classList.add("todo" + mytodo.length);
-        todoDiv.appendChild(checklist());
+
         //adding description
         const todop1 = document.createElement("p");
         todop1.innerHTML = description;
-        todoDiv.appendChild(todop1);
+
         //adding due date
         const todop2 = document.createElement("p");
         todop2.innerHTML = dueDate;
-        todoDiv.appendChild(todop2);
+
         //adding priority
         const todop3 = document.createElement("p");
         todop3.innerHTML = priority;
-        todoDiv.appendChild(todop3);
 
+
+    
         
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";
         deleteButton.addEventListener("click", function(){return taskcontainerpr.removeChild(todoDiv)});
         deleteButton.addEventListener("click", function(){return mytodo.splice(mytodo.length - 1, 1)});
-        todoDiv.appendChild(deleteButton);
+        
+
+        leftContainer.appendChild(checklist());
+        leftContainer.appendChild(todop1);
+
+        rightContainer.appendChild(todop2);
+        rightContainer.appendChild(todop3);
+        rightContainer.appendChild(deleteButton);
+        todoDiv.appendChild(leftContainer);
+        todoDiv.appendChild(rightContainer);
         
      const taskcontainerpr = document.getElementsByClassName("taskcontainer")[0];
 

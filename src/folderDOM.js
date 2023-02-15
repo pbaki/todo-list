@@ -2,7 +2,7 @@ import { sidebarButtonFunctionality } from "./sidebarButton";
 
 export default function folderform () {
     const form = document.createElement('form');
-    form.classList.add("form");
+    form.classList.add("folderForm");
 
     form.appendChild(title());
     form.appendChild(create());
