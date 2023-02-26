@@ -30,8 +30,8 @@ let sidebarButtonFunctionality =  function(event) {
         addTodoInput.setAttribute("name", "addTodo");
         addTodoInput.setAttribute("id", "addTodo");
 
-        const formTaker = document.getElementsByClassName("form2")[0];
-        while (formTaker.children[3]){
+        const formTaker = document.getElementsByClassName("restContainer")[0];
+        while (formTaker.children[2]){
             formTaker.removeChild(formTaker.lastChild);
         };
 
@@ -123,6 +123,20 @@ function addingObjecttoArray () {
         
         return myProjects;
     }
+
+
+function defaultProject() {
+        const title = document.getElementById("title").value;
+        const id = myProjects.length;
+        const newlist = [];
+        
+        const domel = document.getElementsByClassName("project" + myProjects.length);
+
+        
+        
+        return new folder(id, title, newlist, domel);
+
+}
 
 
 export { sidebarButtonFunctionality };
