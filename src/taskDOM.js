@@ -94,4 +94,3 @@ addTodoLabel.appendChild(addTodoInput);
 
     return addTodoLabel;
 }
-
