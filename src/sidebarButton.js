@@ -1,9 +1,7 @@
 import folder from "./folder";
-import { mytodo } from "./taskButton";
 import { checklist } from "./taskButton";
 
 let myProjects = [];
-
 let sidebarButtonFunctionality =  function() {
         const title = document.getElementById("title").value;
 
@@ -16,6 +14,7 @@ let sidebarButtonFunctionality =  function() {
         projectDiv.appendChild(projectH);
 
         addingObjecttoArray();
+        
 
         projectDiv.addEventListener("click", switchProject)
         
@@ -46,11 +45,9 @@ let sidebarButtonFunctionality =  function() {
             while (taskcontainerpr.children[1]){
             taskcontainerpr.removeChild(taskcontainerpr.lastChild);
         };
-//            for (let item of myProjects){
-//                console.log(item)
-//            }
-            let projectList = myProjects[projectDiv.className.charAt(7)].arr;
-            console.log(projectList)
+
+                let projectList = myProjects[projectDiv.className.charAt(7)].arr;
+            console.log(myProjects)
 
             for (let item of projectList){
                 taskcontainerpr.appendChild(item);
@@ -67,9 +64,10 @@ let sidebarButtonFunctionality =  function() {
         const rightContainer = document.createElement('div');
         rightContainer.classList.add('right');
 
+        const id = Math.random().toString(16).slice(2)
         const todoDiv = document.createElement("div");
-        todoDiv.classList.add("todo" + mytodo.length);
-
+        todoDiv.classList.add("todo" + id);
+        
         //adding description
         const todop1 = document.createElement("p");
         todop1.innerHTML = description;
@@ -81,15 +79,14 @@ let sidebarButtonFunctionality =  function() {
         //adding priority
         const todop3 = document.createElement("p");
         todop3.innerHTML = priority;
-
-
-    
         
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";
-        deleteButton.addEventListener("click", function(){return taskcontainerpr.removeChild(todoDiv)});
-        deleteButton.addEventListener("click", function(){return mytodo.splice(mytodo.length - 1, 1)});
-        
+        deleteButton.addEventListener("click", function(){return todoDiv.parentNode.removeChild(todoDiv)});
+        deleteButton.addEventListener("click", function(){
+            projectList.splice(projectList.findIndex(e => e.className === todoDiv.className), 1);
+            return projectList;
+        });
 
         leftContainer.appendChild(checklist());
         leftContainer.appendChild(todop1);
@@ -104,7 +101,7 @@ let sidebarButtonFunctionality =  function() {
 
       taskcontainerpr.appendChild(todoDiv);
 
-
+        
         projectList.push(todoDiv);
           
             }
@@ -134,7 +131,6 @@ function addingObjecttoArray () {
         const newlist = [];
         
         const domel = document.getElementsByClassName("project" + myProjects.length);
-        console.log(domel);
 
         myProjects.push(new folder(id, title, newlist, domel));
         console.log(myProjects);
