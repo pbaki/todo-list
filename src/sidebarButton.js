@@ -8,12 +8,19 @@ let sidebarButtonFunctionality =  function() {
 
         // creating dom elements button is creating
         const projectDiv = document.createElement("div");
-        projectDiv.classList.add("project" + myProjects.length);
+        const id1 = Math.random().toString(16).slice(2);
+        projectDiv.classList.add("project" + id1);
         const projectH = document.createElement("h1");
         projectH.innerHTML = title;
         projectDiv.appendChild(projectH);
 
-        addingObjecttoArray();
+
+        //Object to array
+        const id2 = myProjects.length;
+        const newlist = [];
+
+        myProjects.push(new folder(id2, title, newlist, projectDiv));
+        console.log(myProjects);
         
 
         projectDiv.addEventListener("click", switchProject)
@@ -45,13 +52,15 @@ let sidebarButtonFunctionality =  function() {
             while (taskcontainerpr.children[1]){
             taskcontainerpr.removeChild(taskcontainerpr.lastChild);
         };
-
-                let projectList = myProjects[projectDiv.className.charAt(7)].arr;
-            console.log(myProjects)
-
-            for (let item of projectList){
-                taskcontainerpr.appendChild(item);
-            }
+                let projectIndex = myProjects.findIndex(e => e.domElement.className === projectDiv.className)
+                if (projectIndex == -1){
+                    return;
+                } else {
+                    var projectList = myProjects[projectIndex].arr;
+                    for (let item of projectList){
+                        taskcontainerpr.appendChild(item);
+                    }
+                }
 
         function eventFunctionality () {
        const description = document.getElementById("description").value;
@@ -64,7 +73,7 @@ let sidebarButtonFunctionality =  function() {
         const rightContainer = document.createElement('div');
         rightContainer.classList.add('right');
 
-        const id = Math.random().toString(16).slice(2)
+        const id = Math.random().toString(16).slice(2);
         const todoDiv = document.createElement("div");
         todoDiv.classList.add("todo" + id);
         
@@ -74,7 +83,7 @@ let sidebarButtonFunctionality =  function() {
 
         //adding due date
         const todop2 = document.createElement("p");
-        todop2.innerHTML = dueDate;
+        todop2.innerHTML = dueDate;myProjects.push(new folder(id2, title, newlist, projectDiv));
 
         //adding priority
         const todop3 = document.createElement("p");
@@ -110,8 +119,11 @@ let sidebarButtonFunctionality =  function() {
 
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";
-        deleteButton.addEventListener("click", function(){return sidebarpr.removeChild(projectDiv)});
-        deleteButton.addEventListener("click", function(){return myProjects.splice(myProjects.length - 1, 1)});
+        deleteButton.addEventListener("click", function(){return projectDiv.parentNode.removeChild(projectDiv)});
+        deleteButton.addEventListener("click", function(){
+            myProjects.splice(myProjects.findIndex(e => e.domElement.className === projectDiv.className), 1);
+            return myProjects;
+        });
         projectDiv.appendChild(deleteButton);
 
 
@@ -122,21 +134,4 @@ let sidebarButtonFunctionality =  function() {
 
 
 
-
-
-
-function addingObjecttoArray () {
-        const title = document.getElementById("title").value;
-        const id = myProjects.length;
-        const newlist = [];
-        
-        const domel = document.getElementsByClassName("project" + myProjects.length);
-
-        myProjects.push(new folder(id, title, newlist, domel));
-        console.log(myProjects);
-//        console.log(id);
-        
-        return myProjects;
-    }
-
-export { sidebarButtonFunctionality };
+export { sidebarButtonFunctionality, myProjects };
