@@ -10,7 +10,7 @@ let sidebarButtonFunctionality =  function() {
         const projectDiv = document.createElement("div");
         const id1 = Math.random().toString(16).slice(2);
         projectDiv.classList.add("project" + id1);
-        const projectH = document.createElement("h1");
+        const projectH = document.createElement("h2");
         projectH.innerHTML = title;
         projectDiv.appendChild(projectH);
 
@@ -83,7 +83,7 @@ let sidebarButtonFunctionality =  function() {
 
         //adding due date
         const todop2 = document.createElement("p");
-        todop2.innerHTML = dueDate;myProjects.push(new folder(id2, title, newlist, projectDiv));
+        todop2.innerHTML = dueDate;
 
         //adding priority
         const todop3 = document.createElement("p");
@@ -105,12 +105,12 @@ let sidebarButtonFunctionality =  function() {
         rightContainer.appendChild(deleteButton);
         todoDiv.appendChild(leftContainer);
         todoDiv.appendChild(rightContainer);
-        
+  
      const taskcontainerpr = document.getElementsByClassName("taskcontainer")[0];
 
       taskcontainerpr.appendChild(todoDiv);
 
-        
+        myProjects.push(new folder(id2, title, newlist, projectDiv));
         projectList.push(todoDiv);
           
             }

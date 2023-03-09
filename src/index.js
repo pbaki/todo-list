@@ -17,7 +17,10 @@ function layout() {
 function header() {
   const header = document.createElement("div");
   header.classList.add("header");
+  const headerh1 = document.createElement("h1")
+  headerh1.innerHTML="TODO LIST";
 
+  header.appendChild(headerh1)
   return header;
 }
 
