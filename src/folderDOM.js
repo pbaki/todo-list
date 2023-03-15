@@ -25,7 +25,6 @@ function title () {
     return titleLabel;
 }
 
-
 function create () {
     const createLabel = document.createElement('label');
     createLabel.setAttribute("for", "create");

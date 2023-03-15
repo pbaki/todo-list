@@ -1,6 +1,8 @@
 import './style.css';
 import taskdom from './taskDOM';
 import folderform from './folderDOM';
+import defaultProject from './defaultProject';
+
 
 function layout() {
   const element = document.createElement('div');
@@ -29,7 +31,6 @@ function sidebar() {
   sidebar.classList.add("sidebar");
 
   sidebar.appendChild(folderform());
-
   return sidebar;
 }
 
@@ -47,3 +48,7 @@ function taskcontainer() {
 export {header, sidebar, taskcontainer}
 
 document.body.appendChild(layout());
+
+defaultProject()
+
+

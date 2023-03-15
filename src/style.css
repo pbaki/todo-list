@@ -58,8 +58,8 @@ div[class*='project'] {
     margin-left: 5px;
     margin-right: 10px;
 }
-div[class*='project']:active {
-    border: 2px solid yellow;
+div[class*='project']:hover {
+    border: 2px solid rgb(0, 255, 170);
 }
 div[class*='project'] h2 {
     margin: 0 0 15px 0;

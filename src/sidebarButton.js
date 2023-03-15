@@ -3,6 +3,7 @@ import { checklist } from "./taskButton";
 
 let myProjects = [];
 let sidebarButtonFunctionality =  function() {
+
         const title = document.getElementById("title").value;
 
 
