@@ -1,68 +1,92 @@
+
+/* primary colors */
+:root {
+  --primary-color: #007bff; /* Blue */
+  --secondary-color: #6c757d; /* Gray */
+  --light-color: #f8f9fa; /* Light Gray */
+  --dark-color: #343a40; /* Dark Gray */
+}
+
 html,
 body {
     width: 100%;
     height: 100%;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--dark-color);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .main {
-    width: 90%;
-    height: 90%;
+    width: 97%;
+    height: 94%;
     display: grid;
-    margin: 20px auto;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr 4fr;
     gap: 10px;
-}
 
+}
 
 .header {
     grid-column: 1 / 3;
     grid-row: 1;
-    border: 1px solid black;
     border-radius: 10px;
+    background-color: var(--light-color);
+    text-align: center;
+    padding: 20px;
 }
+
+.header h1 {
+    margin: 30px 40px;
+    color: var(--dark-color);
+    font-size: 32px;
+}
+
 .sidebar {
     grid-column: 1 ;
     grid-row: 2;
-    border: 1px solid black;
     border-radius: 10px;
+    background-color: var(--light-color);
     display: flex;
     flex-direction: column;
     gap: 10px;
-    overflow: auto;
+    overflow: scroll;
+    padding: 10px;
 }
 .taskcontainer {
     grid-column: 2;
     grid-row: 2;
-    border: 1px solid black;
     border-radius: 10px;
+    background-color: var(--light-color);
     display: flex;
     flex-direction: column;
     gap: 10px;
     overflow: auto;
+    padding: 10px;
 }
 
 
-div[class*='todo'] {
-    border: 2px solid rgb(5, 116, 14);
+div[class*='todo'], div[class*='project'] {
+    border: 2px solid var(--primary-color);
     border-radius: 20px;
     margin-left: 20px;
     margin-right: 25px;
     display: flex;
     justify-content: space-between;
+    background-color: var(--light-color);
+    padding: 10px;  
 }
-div[class*='project'] {
-    border: 2px solid rgb(5, 116, 14);
-    border-radius: 20px;
-    padding: 10px 15px;
-    margin-left: 5px;
-    margin-right: 10px;
-}
+
 div[class*='project']:hover {
-    border: 2px solid rgb(0, 255, 170);
+    border: 2px solid var(--secondary-color);
 }
 div[class*='project'] h2 {
     margin: 0 0 15px 0;
+    color: var(--dark-color);
 }
 
 .folderForm {
@@ -71,31 +95,26 @@ div[class*='project'] h2 {
     align-items: center;
     justify-content:space-between;
     gap: 5px;
-    border: 2px solid rgb(38, 194, 51);
+    border: 2px solid var(--primary-color);
     border-radius: 20px;
     padding: 6px 12px;
     margin: 5px 8px;
+    background-color: var(--light-color);
 
 }
 
-#title {
-    margin: 5px;
+#title, #description, #dueDate, #priority, #addTodo {
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+  background-color: var(--light-color);
+  color: var(--dark-color);
 }
-#description {
-    margin: 5px;
-    width: 400px;
-}
-#dueDate {
-    margin: 5px;
-}
-#priority {
-    margin: 5px;
-}
-#addTodo {
-    margin: 5px;
-}
-.descContainer, .restContainer {
-    border: 2px solid rgb(38, 194, 51);
+
+.descContainer, 
+.restContainer {
+    border: 2px solid var(--primary-color);
     border-radius: 20px;
     margin: 5px 10px;
     padding: 5px 10px;
@@ -106,6 +125,7 @@ div[class*='project'] h2 {
     justify-content: space-between;
     gap: 5px;
     margin: 0px 10px;
+    padding: 5px 10px;
 }
 
 .left {
@@ -129,11 +149,39 @@ div[class*='project'] h2 {
 button {
     all: unset;
     cursor: pointer;
-    border: 2px solid rgb(38, 194, 51);
+    border: 2px solid var(--primary-color);
     border-radius: 20px;
-    padding: 3px 6px;
-    background-color: aliceblue;
+    padding: 4px 8px;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    font-weight: bold;
 }
-button:active {
-  outline: orange 5px auto;
+
+    button:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+    button:active {
+    background-color: var(--secondary-color);
+    outline: none;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 15px;
+  margin-right: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #007bff;
+  border-radius: 10px;
+  border: 2px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #0062cc;
 }
