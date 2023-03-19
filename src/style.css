@@ -85,6 +85,8 @@ div[class*='project']:hover {
 }
 div[class*='project'] h2 {
     margin: 0 0 15px 0;
+    max-width: 100%;
+    word-wrap: break-word;
     color: var(--dark-color);
 }
 div[class*='project'].clicked {
@@ -135,10 +137,16 @@ div[class*='project'].clicked {
 }
 
 .left {
+    width: 70%;
     margin: 5px 10px;
     gap: 10px;
     display: flex;
     align-items: center;
+}
+p {
+    padding-left: 20px;
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
 .right {
@@ -163,6 +171,7 @@ button {
     font-weight: bold;
     height: 20px;
     width: 50px;
+    align-self: center;
 }
 
     button:hover {
