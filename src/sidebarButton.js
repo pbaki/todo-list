@@ -131,6 +131,20 @@ let sidebarButtonFunctionality =  function() {
         const sidebarpr = document.getElementsByClassName("sidebar")[0];
      
       sidebarpr.appendChild(projectDiv);
+
+//Adding after click functionality to projects
+                const projects = document.querySelectorAll("[class^='project']");
+
+        projects.forEach((project) => {
+        project.addEventListener('click', () => {
+            projects.forEach((p) => {
+            p.classList.remove('clicked');
+            });
+
+            project.classList.add('clicked');
+        });
+        });
+
     }
 
 
