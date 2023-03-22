@@ -1,16 +1,16 @@
 /* primary colors */
 :root {
-  --primary-color: #007bff; /* Blue */
-  --secondary-color: #6c757d; /* Gray */
-  --light-color: #e0f8ff; /* Light Gray */
-  --dark-color: #343a40; /* Dark Gray */
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #6c757d; /* Gray */
+    --light-color: #e0f8ff; /* Light Gray */
+    --dark-color: #343a40; /* Dark Gray */
 }
 
 html,
 body {
     width: 100%;
     height: 100%;
-    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -27,7 +27,6 @@ body {
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr 4fr;
     gap: 15px;
-
 }
 
 .header {
@@ -46,7 +45,7 @@ body {
 }
 
 .sidebar {
-    grid-column: 1 ;
+    grid-column: 1;
     grid-row: 2;
     border-radius: 10px;
     background-color: var(--light-color);
@@ -68,8 +67,8 @@ body {
     padding: 10px;
 }
 
-
-div[class*='todo'], div[class*='project'] {
+div[class*="todo"],
+div[class*="project"] {
     border: 3px solid var(--primary-color);
     border-radius: 20px;
     margin-left: 20px;
@@ -77,19 +76,19 @@ div[class*='todo'], div[class*='project'] {
     display: flex;
     justify-content: space-between;
     background-color: var(--light-color);
-    padding: 10px;  
+    padding: 10px;
 }
 
-div[class*='project']:hover {
+div[class*="project"]:hover {
     border: 3px solid var(--dark-color);
 }
-div[class*='project'] h2 {
+div[class*="project"] h2 {
     margin: 0 0 15px 0;
     max-width: 100%;
     word-wrap: break-word;
     color: var(--dark-color);
 }
-div[class*='project'].clicked {
+div[class*="project"].clicked {
     border: 3px solid var(--dark-color);
 }
 
@@ -97,30 +96,33 @@ div[class*='project'].clicked {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     gap: 5px;
     border: 2px solid var(--primary-color);
     border-radius: 20px;
     padding: 6px 12px;
     margin: 5px 8px;
     background-color: var(--light-color);
-
 }
 
-#title, #description, #dueDate, #priority, #addTodo {
-  margin: 5px;
-  padding: 5px;
-  border: 1px solid var(--secondary-color);
-  border-radius: 5px;
-  background-color: var(--light-color);
-  color: var(--dark-color);
+#title,
+#description,
+#dueDate,
+#priority,
+#addTodo {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    background-color: var(--light-color);
+    color: var(--dark-color);
 }
 
-.descContainer{
+.descContainer {
     width: 50%;
     flex-shrink: 0;
 }
-.descContainer, 
+.descContainer,
 .restContainer {
     border: 2px solid var(--primary-color);
     border-radius: 20px;
@@ -157,8 +159,6 @@ p {
 }
 .header h1 {
     margin: 30px 40px;
-
-
 }
 button {
     all: unset;
@@ -174,75 +174,78 @@ button {
     align-self: center;
 }
 
-    button:hover {
+button:hover {
     background-color: var(--primary-color);
     color: var(--light-color);
 }
-    button:active {
+button:active {
     background-color: var(--secondary-color);
     outline: none;
 }
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
-  width: 15px;
-  margin-right: 3px;
+    width: 15px;
+    margin-right: 3px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--light-color);
+    background-color: var(--light-color);
 }
 
 ::-webkit-scrollbar:horizontal {
-  height: 0;
-  width: 0;
-  display: none;
+    height: 0;
+    width: 0;
+    display: none;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #007bff;
-  border-radius: 10px;
-  border: 2px solid #f1f1f1;
+    background-color: #007bff;
+    border-radius: 10px;
+    border: 2px solid #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #0062cc;
+    background-color: #0062cc;
 }
 
 /* Styling input */
 input[type="text"] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid var(--secondary-color);
-  border-radius: 5px;
-  background-color: var(--light-color);
-  color: var(--dark-color);
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid var(--secondary-color);
+    border-radius: 5px;
+    background-color: var(--light-color);
+    color: var(--dark-color);
 }
 
 input[type="text"]:focus {
-  outline: none;
-  border: 2px solid var(--primary-color);
+    outline: none;
+    border: 2px solid var(--primary-color);
 }
 
-#create ,#addTodo {
-  background-color: var(--primary-color);
-  color: var(--light-color);
-  border: none;
-  border-radius: 8px;
-  padding: 12px 20px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
+#create,
+#addTodo {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
 }
 
-#create:hover, #addTodo:hover {
-  background-color: #0056b3;
+#create:hover,
+#addTodo:hover {
+    background-color: #0056b3;
 }
 
-#create:active, #addTodo:active {
-  background-color: #004799;
+#create:active,
+#addTodo:active {
+    background-color: #004799;
 }
 label {
     font-size: 23px;

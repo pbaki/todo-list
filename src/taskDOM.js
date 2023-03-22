@@ -1,15 +1,15 @@
 import { taskButtonFunctionality } from "./taskButton.js";
 export default function taskform() {
-    const form = document.createElement('form');
+    const form = document.createElement("form");
     form.classList.add("taskForm");
 
-    const descContainer = document.createElement('div');
-    descContainer.classList.add('descContainer');
+    const descContainer = document.createElement("div");
+    descContainer.classList.add("descContainer");
 
-    const restContainer = document.createElement('div');
-    restContainer.classList.add('restContainer');
+    const restContainer = document.createElement("div");
+    restContainer.classList.add("restContainer");
 
-//    form.appendChild(checklist());
+    //    form.appendChild(checklist());
     descContainer.appendChild(description());
     restContainer.appendChild(dueDate());
     restContainer.appendChild(priority());
@@ -18,10 +18,10 @@ export default function taskform() {
     form.appendChild(descContainer);
     form.appendChild(restContainer);
 
-    return form; 
+    return form;
 }
 function description() {
-    const descriptionLabel = document.createElement('label');
+    const descriptionLabel = document.createElement("label");
     descriptionLabel.setAttribute("for", "description");
     descriptionLabel.innerHTML = "Description";
 
@@ -36,7 +36,7 @@ function description() {
 }
 
 function dueDate() {
-    const dueDateLabel = document.createElement('label');
+    const dueDateLabel = document.createElement("label");
     dueDateLabel.setAttribute("for", "dueDate");
     dueDateLabel.innerHTML = "Due Date";
 
@@ -55,15 +55,15 @@ function priority() {
     prioritySelect.setAttribute("name", "priority");
     prioritySelect.setAttribute("id", "priority");
 
-    const option1 = document.createElement('option');
+    const option1 = document.createElement("option");
     option1.setAttribute("value", "Urgent");
     option1.innerHTML = "Urgent";
 
-    const option2 = document.createElement('option');
+    const option2 = document.createElement("option");
     option2.setAttribute("value", "Normal");
     option2.innerHTML = "Normal";
 
-    const option3 = document.createElement('option');
+    const option3 = document.createElement("option");
     option3.setAttribute("value", "Low");
     option3.innerHTML = "Low";
 
@@ -73,10 +73,9 @@ function priority() {
 
     return prioritySelect;
 }
-      
 
 function addTodo() {
-    const addTodoLabel = document.createElement('label');
+    const addTodoLabel = document.createElement("label");
     addTodoLabel.setAttribute("for", "addTodo");
 
     const addTodoInput = document.createElement("input");
@@ -85,12 +84,10 @@ function addTodo() {
     addTodoInput.setAttribute("name", "addTodo");
     addTodoInput.setAttribute("id", "addTodo");
 
-
     //button functionality
     addTodoInput.addEventListener("click", () => taskButtonFunctionality());
 
-
-addTodoLabel.appendChild(addTodoInput);
+    addTodoLabel.appendChild(addTodoInput);
 
     return addTodoLabel;
 }
