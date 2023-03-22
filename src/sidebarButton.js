@@ -88,7 +88,7 @@ let sidebarButtonFunctionality =  function() {
 
         //adding priority
         const todop3 = document.createElement("p");
-        todop3.innerHTML = priority;
+        todop3.innerHTML = "Priority: " + priority;
         
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";

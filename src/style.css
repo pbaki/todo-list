@@ -2,7 +2,7 @@
 :root {
   --primary-color: #007bff; /* Blue */
   --secondary-color: #6c757d; /* Gray */
-  --light-color: #f8f9fa; /* Light Gray */
+  --light-color: #e0f8ff; /* Light Gray */
   --dark-color: #343a40; /* Dark Gray */
 }
 
@@ -190,7 +190,13 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
+  background-color: var(--light-color);
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 0;
+  width: 0;
+  display: none;
 }
 
 ::-webkit-scrollbar-thumb {
