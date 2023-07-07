@@ -9,7 +9,6 @@ export default function taskform() {
     const restContainer = document.createElement("div");
     restContainer.classList.add("restContainer");
 
-    //    form.appendChild(checklist());
     descContainer.appendChild(description());
     restContainer.appendChild(dueDate());
     restContainer.appendChild(priority());

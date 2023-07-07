@@ -31,10 +31,8 @@ let taskButtonFunctionality = function () {
     const deleteButton = document.createElement("button");
     deleteButton.innerHTML = "Delete";
     deleteButton.addEventListener("click", function () {
-        return taskcontainerpr.removeChild(todoDiv);
-    });
-    deleteButton.addEventListener("click", function () {
-        return mytodo.splice(mytodo.length - 1, 1);
+        taskcontainerpr.removeChild(todoDiv);
+        mytodo.splice(mytodo.length - 1, 1);
     });
 
     leftContainer.appendChild(checklist());
@@ -57,9 +55,8 @@ function tododomElement() {
     const priority = document.getElementById("priority").value;
     const id = mytodo.length;
 
-    mytodo.push(new task(id, description, dueDate, priority, domElement2));
-    console.log(mytodo);
-    console.log(id);
+    const newTask = new task(id, description, dueDate, priority, domElement2);
+    mytodo.push(newTask);
 
     return mytodo;
 }
