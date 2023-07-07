@@ -1,9 +1,8 @@
-/* primary colors */
 :root {
-    --primary-color: #007bff; /* Blue */
-    --secondary-color: #6c757d; /* Gray */
-    --light-color: #e0f8ff; /* Light Gray */
-    --dark-color: #343a40; /* Dark Gray */
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --light-color: #cee4eb;
+    --dark-color: #343a40;
 }
 
 html,
@@ -58,7 +57,7 @@ body {
 .taskcontainer {
     grid-column: 2;
     grid-row: 2;
-    border-radius: 10px;
+    border-radius: 10px 0px 0px 10px;
     background-color: var(--light-color);
     display: flex;
     flex-direction: column;
@@ -202,7 +201,7 @@ button:active {
 ::-webkit-scrollbar-thumb {
     background-color: #007bff;
     border-radius: 10px;
-    border: 2px solid #f1f1f1;
+    border: 2px solid var(--light-color);
 }
 
 ::-webkit-scrollbar-thumb:hover {
